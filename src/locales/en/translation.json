@@ -1,0 +1,36 @@
+{
+  "common": {
+    "settings": "Settings",
+    "accounts": "Accounts",
+    "inbox": "Inbox",
+    "sent": "Sent",
+    "draft": "Draft",
+    "trash": "Trash",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "favorites": "Favorites",
+    "labels": "Labels",
+    "help": "Help & Support"
+  },
+  "email": {
+    "compose": "Compose",
+    "subject": "Subject",
+    "to": "To",
+    "from": "From",
+    "send": "Send",
+    "reply": "Reply",
+    "forward": "Forward",
+    "delete": "Delete"
+  },
+  "settings": {
+    "generalSettings": "General Settings",
+    "connectedAccounts": "Connected Accounts",
+    "language": "Language",
+    "languageDescription": "Select your preferred language",
+    "theme": "Theme",
+    "themeDescription": "Switch between light and dark mode",
+    "timeZone": "Time Zone",
+    "timeZoneDescription": "Set your local time zone",
+    "notifications": "Notifications"
+  }
+}

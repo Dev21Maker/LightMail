@@ -1,0 +1,36 @@
+{
+  "common": {
+    "settings": "Ustawienia",
+    "accounts": "Konta",
+    "inbox": "Skrzynka odbiorcza",
+    "sent": "Wysłane",
+    "draft": "Szkice",
+    "trash": "Kosz",
+    "connect": "Połącz",
+    "disconnect": "Rozłącz",
+    "favorites": "Ulubione",
+    "labels": "Etykiety",
+    "help": "Pomoc i wsparcie"
+  },
+  "email": {
+    "compose": "Nowa wiadomość",
+    "subject": "Temat",
+    "to": "Do",
+    "from": "Od",
+    "send": "Wyślij",
+    "reply": "Odpowiedz",
+    "forward": "Przekaż dalej",
+    "delete": "Usuń"
+  },
+  "settings": {
+    "generalSettings": "Ustawienia ogólne",
+    "connectedAccounts": "Połączone konta",
+    "language": "Język",
+    "languageDescription": "Wybierz preferowany język",
+    "theme": "Motyw",
+    "themeDescription": "Przełącz między jasnym a ciemnym motywem",
+    "timeZone": "Strefa czasowa",
+    "timeZoneDescription": "Ustaw swoją lokalną strefę czasową",
+    "notifications": "Powiadomienia"
+  }
+}
