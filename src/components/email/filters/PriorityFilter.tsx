@@ -28,9 +28,9 @@ export function PriorityFilter({ selectedPriorities, onChange }: PriorityFilterP
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-3 py-2 border rounded-lg hover:border-primary-500 transition-colors"
+        className="w-full flex items-center justify-between px-3 py-2 border rounded-lg bg-card hover:border-primary-500 transition-colors"
       >
-        <span className="text-sm">
+        <span className="text-sm text-foreground">
           {selectedPriorities.length
             ? `${selectedPriorities.length} priority level${selectedPriorities.length > 1 ? 's' : ''}`
             : 'All priorities'}
@@ -39,26 +39,17 @@ export function PriorityFilter({ selectedPriorities, onChange }: PriorityFilterP
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white border rounded-lg shadow-lg z-10">
+        <div className="absolute left-0 right-0 mt-1 bg-popover text-popover-foreground border rounded-lg shadow-lg">
           {priorityOptions.map((option) => (
-            <label
+            <button
               key={option.value}
-              className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 cursor-pointer"
+              onClick={() => togglePriority(option.value as Priority)}
+              className={`flex items-center gap-2 px-4 py-2 w-full text-left rounded-lg transition-colors 
+                ${selectedPriorities.includes(option.value as Priority) ? 'bg-primary text-primary-foreground' : 'hover:bg-muted hover:text-foreground'}`}
             >
-              <input
-                type="checkbox"
-                checked={selectedPriorities.includes(option.value as Priority)}
-                onChange={() => togglePriority(option.value as Priority)}
-                className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
-              />
-              <Flag className={`w-4 h-4 ${
-                option.value === 'high' ? 'text-red-500' :
-                option.value === 'medium' ? 'text-yellow-500' :
-                option.value === 'low' ? 'text-green-500' :
-                'text-gray-400'
-              }`} />
-              <span className="text-sm">{option.label}</span>
-            </label>
+              <option.icon className="w-4 h-4" />
+              {option.label}
+            </button>
           ))}
         </div>
       )}

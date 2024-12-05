@@ -12,14 +12,23 @@ export function GeneralSettings() {
   };
 
   return (
-    <section className="rounded-lg p-6 border border-gray-200 dark:border-gray-700">
-      <h2 className="text-xl font-semibold mb-4">{t('settings.generalSettings')}</h2>
+    <section className="bg-card rounded-lg p-6 border border-border">
+      <h2 className="text-xl font-semibold mb-6 text-foreground">{t('settings.generalSettings')}</h2>
       
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <div>
-            <h3 className="font-medium">{t('settings.theme')}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{t('settings.themeDescription')}</p>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary">
+              {theme === 'dark' ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </div>
+            <div>
+              <h3 className="font-medium text-foreground">{t('settings.theme')}</h3>
+              <p className="text-sm text-muted-foreground">{t('settings.themeDescription')}</p>
+            </div>
           </div>
           <label className="relative inline-flex items-center cursor-pointer">
             <input
@@ -28,39 +37,37 @@ export function GeneralSettings() {
               checked={theme === 'dark'}
               onChange={toggleTheme}
             />
-            <div className="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            <span className="ml-3">
-              {theme === 'dark' ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </span>
+            <div className="w-11 h-6 bg-muted peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-ring peer-focus:ring-offset-2 peer-focus:ring-offset-background rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
           </label>
         </div>
 
         <div className="flex items-center justify-between">
-          <div>
-            <h3 className="font-medium">{t('settings.language')}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{t('settings.languageDescription')}</p>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary">
+              <span className="text-lg font-medium">A</span>
+            </div>
+            <div>
+              <h3 className="font-medium text-foreground">{t('settings.language')}</h3>
+              <p className="text-sm text-muted-foreground">{t('settings.languageDescription')}</p>
+            </div>
           </div>
           <div className="flex gap-2">
             <button
               onClick={() => changeLanguage('en')}
-              className={`px-3 py-2 rounded-lg ${
+              className={`min-w-[80px] px-3 py-2 rounded-lg transition-colors ${
                 i18n.language === 'en'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted text-foreground hover:bg-muted/80'
               }`}
             >
               English
             </button>
             <button
               onClick={() => changeLanguage('pl')}
-              className={`px-3 py-2 rounded-lg ${
+              className={`min-w-[80px] px-3 py-2 rounded-lg transition-colors ${
                 i18n.language === 'pl'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-muted text-foreground hover:bg-muted/80'
               }`}
             >
               Polski
@@ -69,11 +76,16 @@ export function GeneralSettings() {
         </div>
 
         <div className="flex items-center justify-between">
-          <div>
-            <h3 className="font-medium">{t('settings.timeZone')}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{t('settings.timeZoneDescription')}</p>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary">
+              <span className="text-lg font-medium">TZ</span>
+            </div>
+            <div>
+              <h3 className="font-medium text-foreground">{t('settings.timeZone')}</h3>
+              <p className="text-sm text-muted-foreground">{t('settings.timeZoneDescription')}</p>
+            </div>
           </div>
-          <select className="px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700">
+          <select className="min-w-[120px] px-3 py-2 bg-muted text-foreground border border-input rounded-lg focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background focus:outline-none">
             <option value="UTC">UTC</option>
             <option value="GMT">GMT</option>
             <option value="EST">EST</option>
