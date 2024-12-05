@@ -22,7 +22,7 @@ export function Sidebar({ currentView, onViewChange }: SidebarProps) {
   const { t } = useTranslation();
 
   return (
-    <aside className="w-[280px] fixed left-0 top-16 bottom-0 bg-card border-r border-border flex flex-col">
+    <aside className="h-full w-64 bg-card border-r border-border flex flex-col">
       <div className="flex-1 overflow-y-auto">
         <nav className="p-4 space-y-1">
           {menuItems.map((item) => (

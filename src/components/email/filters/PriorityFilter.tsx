@@ -35,19 +35,25 @@ export function PriorityFilter({ selectedPriorities, onChange }: PriorityFilterP
             ? `${selectedPriorities.length} priority level${selectedPriorities.length > 1 ? 's' : ''}`
             : 'All priorities'}
         </span>
-        <ChevronDown className="w-4 h-4 text-gray-500" />
+        <ChevronDown className="w-4 h-4 text-muted-foreground" />
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 mt-1 bg-popover text-popover-foreground border rounded-lg shadow-lg">
+        <div className="absolute left-0 right-0 mt-1 bg-card text-foreground border rounded-lg shadow-lg">
           {priorityOptions.map((option) => (
             <button
               key={option.value}
               onClick={() => togglePriority(option.value as Priority)}
               className={`flex items-center gap-2 px-4 py-2 w-full text-left rounded-lg transition-colors 
-                ${selectedPriorities.includes(option.value as Priority) ? 'bg-primary text-primary-foreground' : 'hover:bg-muted hover:text-foreground'}`}
+                ${selectedPriorities.includes(option.value as Priority) 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'hover:bg-muted hover:text-foreground'}`}
             >
-              <option.icon className="w-4 h-4" />
+              <option.icon className={`w-4 h-4 ${
+                selectedPriorities.includes(option.value as Priority)
+                  ? 'text-primary-foreground'
+                  : 'text-muted-foreground'
+              }`} />
               {option.label}
             </button>
           ))}

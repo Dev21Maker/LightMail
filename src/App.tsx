@@ -73,13 +73,17 @@ function AppContent() {
         </div>
       </div>
       <div className="pt-16 flex">
-        <div className={`${showSidebar ? 'w-64' : 'w-0'} transition-all duration-300 overflow-hidden`}>
+        <div 
+          className={`fixed top-16 bottom-0 transition-all duration-300 ease-in-out ${
+            showSidebar ? 'translate-x-0 w-64' : '-translate-x-full w-64'
+          } z-30`}
+        >
           <Sidebar 
             currentView={currentView}
             onViewChange={setCurrentView}
           />
         </div>
-        <div className="flex-1">
+        <div className={`flex-1 transition-all duration-300 ${showSidebar ? 'ml-64' : 'ml-0'}`}>
           <Header 
             onCompose={() => setShowCompose(true)} 
             filters={filters}

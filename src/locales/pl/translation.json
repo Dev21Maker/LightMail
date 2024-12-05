@@ -10,7 +10,11 @@
     "disconnect": "Rozłącz",
     "favorites": "Ulubione",
     "labels": "Etykiety",
-    "help": "Pomoc i wsparcie"
+    "help": "Pomoc i wsparcie",
+    "addAccount": "Dodaj konto",
+    "remove": "Usuń",
+    "sync": "Synchronizuj",
+    "noAccounts": "Brak połączonych kont. Kliknij \"Dodaj konto\", aby połączyć swoje pierwsze konto e-mail."
   },
   "email": {
     "compose": "Nowa wiadomość",
@@ -31,6 +35,13 @@
     "themeDescription": "Przełącz między jasnym a ciemnym motywem",
     "timeZone": "Strefa czasowa",
     "timeZoneDescription": "Ustaw swoją lokalną strefę czasową",
-    "notifications": "Powiadomienia"
+    "notifications": "Powiadomienia",
+    "connectGmail": "Połącz konto Gmail",
+    "connectImap": "Połącz konto IMAP",
+    "emailAddress": "Adres e-mail",
+    "password": "Hasło",
+    "emailProvider": "Dostawca poczty",
+    "imapServer": "Serwer IMAP (np. imap.gmail.com)",
+    "port": "Port (domyślnie: 993)"
   }
 }

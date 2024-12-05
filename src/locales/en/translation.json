@@ -10,10 +10,14 @@
     "disconnect": "Disconnect",
     "favorites": "Favorites",
     "labels": "Labels",
-    "help": "Help & Support"
+    "help": "Help & Support",
+    "addAccount": "Add Account",
+    "remove": "Remove",
+    "sync": "Sync",
+    "noAccounts": "No accounts connected. Click \"Add Account\" to connect your first email account."
   },
   "email": {
-    "compose": "Compose",
+    "compose": "New Message",
     "subject": "Subject",
     "to": "To",
     "from": "From",
@@ -26,11 +30,18 @@
     "generalSettings": "General Settings",
     "connectedAccounts": "Connected Accounts",
     "language": "Language",
-    "languageDescription": "Select your preferred language",
+    "languageDescription": "Choose your preferred language",
     "theme": "Theme",
-    "themeDescription": "Switch between light and dark mode",
+    "themeDescription": "Toggle between light and dark theme",
     "timeZone": "Time Zone",
     "timeZoneDescription": "Set your local time zone",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "connectGmail": "Connect Gmail Account",
+    "connectImap": "Connect IMAP Account",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "emailProvider": "Email Provider",
+    "imapServer": "IMAP Server (e.g., imap.gmail.com)",
+    "port": "Port (default: 993)"
   }
 }

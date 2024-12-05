@@ -26,31 +26,31 @@ export function AccountFilter({ selectedAccounts, onChange }: AccountFilterProps
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-3 py-2 border rounded-lg hover:border-primary-500 transition-colors"
+        className="w-full flex items-center justify-between px-3 py-2 border rounded-lg bg-card hover:border-primary-500 transition-colors"
       >
-        <span className="text-sm">
+        <span className="text-sm text-foreground">
           {selectedAccounts.length
             ? `${selectedAccounts.length} account${selectedAccounts.length > 1 ? 's' : ''} selected`
             : 'All accounts'}
         </span>
-        <ChevronDown className="w-4 h-4 text-gray-500" />
+        <ChevronDown className="w-4 h-4 text-muted-foreground" />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white border rounded-lg shadow-lg z-10">
+        <div className="absolute top-full left-0 right-0 mt-1 bg-card border rounded-lg shadow-lg z-10">
           {accountOptions.map((option) => (
             <label
               key={option.value}
-              className="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 cursor-pointer"
+              className="flex items-center gap-3 px-3 py-2 hover:bg-muted cursor-pointer"
             >
               <input
                 type="checkbox"
                 checked={selectedAccounts.includes(option.value)}
                 onChange={() => toggleAccount(option.value)}
-                className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                className="rounded border-input text-primary focus:ring-ring"
               />
-              {option.icon && <option.icon className="w-4 h-4 text-gray-500" />}
-              <span className="text-sm">{option.label}</span>
+              {option.icon && <option.icon className="w-4 h-4 text-muted-foreground" />}
+              <span className="text-sm text-foreground">{option.label}</span>
             </label>
           ))}
         </div>
